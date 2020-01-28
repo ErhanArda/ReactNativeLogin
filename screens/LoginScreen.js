@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, View, Alert } from 'react-native';
+import React, { useDebugValue } from 'react';
+import { StyleSheet, View, Alert,Image} from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import { Button } from 'react-native-elements';
 
@@ -24,13 +24,22 @@ export class LoginScreen extends React.Component {
     render() {
 
         return (
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <TextInput value={this.state.uname} onChangeText={(text) => this.setState({ uname: text })} style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1 }} placeholder="Username" ></TextInput>
-                <TextInput value={this.state.pass} onChangeText={(text) => this.setState({ pass: text })} style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1, marginTop: 8 }} placeholder="Password" secureTextEntry={true}></TextInput>
-                <Button title="LOGIN" type="clear"
-                    style={{ height: 40, width: 150, borderColor: 'gray', borderWidth: 1, marginTop: 8, color: 'white', }}
-                    onPress={this.isMet}></Button>
+
+            <View style={styles.container}>
+                <View style={styles.banner}>
+                    <View style={styles.logo}>
+                        <Image source={require("../assets/pubinno-logo.png")}></Image>
+                    </View>
+                </View>
+                <View style={styles.login}>
+                    <TextInput value={this.state.uname} onChangeText={(text) => this.setState({ uname: text })} style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1}} placeholder="Username" ></TextInput>
+                    <TextInput value={this.state.pass} onChangeText={(text) => this.setState({ pass: text })} style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1, marginTop: 8 }} placeholder="Password" secureTextEntry={true}></TextInput>
+                    <Button title="LOGIN" type="clear"
+                        style={{ height: 40, width: 150, borderColor: 'gray', borderWidth: 1, marginTop: 8, color: 'white', }}
+                        onPress={this.isMet}></Button>
+                </View>
             </View>
+
         );
     }
 }
@@ -38,9 +47,21 @@ export class LoginScreen extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        flexDirection: 'column',
+    },
+    banner: {
+        flex: 1, 
+        backgroundColor: '#C43042',
+    },
+    logo:{
+        marginTop:60,
+        alignItems:'center',
+        justifyContent:'center'
+    },
+    login: {
+        flex: 2,
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
     },
 });
-
