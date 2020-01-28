@@ -32,11 +32,13 @@ export class LoginScreen extends React.Component {
                     </View>
                 </View>
                 <View style={styles.login}>
-                    <TextInput value={this.state.uname} onChangeText={(text) => this.setState({ uname: text })} style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1}} placeholder="Username" ></TextInput>
+                   <View style={styles.user}>
+                   <TextInput value={this.state.uname} onChangeText={(text) => this.setState({ uname: text })} style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1}} placeholder="Username" ></TextInput>
                     <TextInput value={this.state.pass} onChangeText={(text) => this.setState({ pass: text })} style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1, marginTop: 8 }} placeholder="Password" secureTextEntry={true}></TextInput>
                     <Button title="LOGIN" type="clear"
                         style={{ height: 40, width: 150, borderColor: 'gray', borderWidth: 1, marginTop: 8, color: 'white', }}
                         onPress={this.isMet}></Button>
+                   </View>
                 </View>
             </View>
 
@@ -63,5 +65,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    user: {
+        flex: 2,
+        backgroundColor: '#fff',
+        marginTop:50,
+        alignItems: 'center',
     },
 });
