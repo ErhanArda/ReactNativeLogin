@@ -16,7 +16,7 @@ export class Home extends React.Component {
                 </Header>
 
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                    <Text>Welcome XXX {/* uname*/}</Text>
+                    <Text>Welcome {this.props.navigation.getParam('name', "User")}</Text>
                 </View>
             </View>
         );
