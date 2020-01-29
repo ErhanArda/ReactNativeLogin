@@ -1,7 +1,7 @@
 import React, { useDebugValue } from 'react';
 import { StyleSheet, View, Alert, Image } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
-import { Button } from 'react-native-elements';
+import { Button, Text } from 'react-native-elements';
 
 export class LoginScreen extends React.Component {
 
@@ -32,9 +32,9 @@ export class LoginScreen extends React.Component {
                     <View style={styles.user}>
                         <TextInput value={this.state.uname} onChangeText={(text) => this.setState({ uname: text })} style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1 }} placeholder="Username" ></TextInput>
                         <TextInput value={this.state.pass} onChangeText={(text) => this.setState({ pass: text })} style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1, marginTop: 8 }} placeholder="Password" secureTextEntry={true}></TextInput>
-                        <Button title="LOGIN" type="clear"
-                            style={{ height: 40, width: 150, borderColor: 'gray', borderWidth: 1, marginTop: 8, color: 'white', }}
-                            onPress={this.isMet}></Button>
+                        <Text
+                            style={styles.text}
+                            onPress={this.isMet}>LOGIN</Text>
                     </View>
                 </View>
             </View>
@@ -68,4 +68,14 @@ const styles = StyleSheet.create({
         marginTop: 50,
         alignItems: 'center',
     },
+    text: {
+        height: 40,
+        width: 150,
+        borderColor: 'gray',
+        borderWidth: 1,
+        marginTop: 8,
+        color: 'black',
+        paddingHorizontal: 50,
+        paddingVertical: 12
+    }
 });
