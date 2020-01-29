@@ -11,7 +11,7 @@ export default class App extends React.Component {
   render() {
     const AppNavigator = createAppContainer(AppDrawerNavigator);
     return (
-      <AppNavigator />
+      <AppNavigator/>
     );
   }
 }
