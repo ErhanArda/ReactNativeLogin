@@ -48,7 +48,7 @@ const AppDrawerNavigator = createDrawerNavigator({
     })
   },
 }, {
-  initialRouteName: 'Home',
+  initialRouteName: 'LogOut',
   contentComponent: CustomDrawerComponent,
   drawerWidth: width * 2 / 3,
   contentOptions: {
