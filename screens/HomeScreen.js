@@ -10,7 +10,6 @@ export class Home extends React.Component {
         await Font.loadAsync({
             'roboto': require('../assets/fonts/Roboto/Roboto.ttf'),
             'bangers': require('../assets/fonts/Bangers/Bangers.ttf'),
-
         });
 
         this.setState({ fontLoaded: true });
@@ -31,7 +30,7 @@ export class Home extends React.Component {
                 <View style={styles.viewStyle}>
                     {
                         this.state.fontLoaded ? (
-                            <Text style>Welcome <Text style={ styles.textBangers }>{this.props.navigation.getParam('name', "User")}</Text></Text>) : null
+                            <Text style>Welcome <Text style={styles.textBangers}>{this.props.navigation.getParam('name', "User")}</Text></Text>) : null
                     }
                 </View>
             </View>
@@ -46,14 +45,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-
     text: {
-        fontFamily: 'roboto', fontSize: 20,color:'white'
+        fontFamily: 'roboto', fontSize: 20, color: 'white'
     },
-    viewStyle:{
+    viewStyle: {
         flex: 1, marginTop: 150, alignItems: 'center'
     },
-    textBangers:{
+    textBangers: {
         fontFamily: 'bangers', fontSize: 20
     }
 })

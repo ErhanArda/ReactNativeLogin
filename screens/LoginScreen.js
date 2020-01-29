@@ -18,13 +18,10 @@ export class LoginScreen extends React.Component {
         else {
             Alert.alert('Alert', 'Please type more then ' + this.state.wlimit + ' character for password:  ' + this.state.pass);
         }
-
     }
 
     render() {
-
         return (
-
             <View style={styles.container}>
                 <View style={styles.banner}>
                     <View style={styles.logo}>
@@ -41,7 +38,6 @@ export class LoginScreen extends React.Component {
                     </View>
                 </View>
             </View>
-
         );
     }
 }

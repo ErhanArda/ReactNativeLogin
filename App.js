@@ -11,18 +11,14 @@ export default class App extends React.Component {
   render() {
     const AppNavigator = createAppContainer(AppDrawerNavigator);
     return (
-      <AppNavigator/>
+      <AppNavigator />
     );
   }
 }
 
 const CustomDrawerComponent = (props) => (
   <SafeAreaView style={{ flex: 1 }}>
-    <View style={{
-      height: 100, backgroundColor: 'white',
-      borderBottomWidth: 2,
-      borderBottomColor: '#C43042'
-    }}>
+    <View style={styles.drawer}>
       <View>
         <View style={{ flex: 1, flexDirection: 'row' }}>
           <Image source={require("./assets/menu.png")} style={styles.logo}></Image>
@@ -70,5 +66,9 @@ const styles = StyleSheet.create({
     color: '#C43042',
     padding: 40,
     marginTop: -20
+  }, drawer: {
+    height: 100, backgroundColor: 'white',
+    borderBottomWidth: 2,
+    borderBottomColor: '#C43042'
   }
 })

@@ -10,9 +10,7 @@ export class Settings extends React.Component {
     async componentDidMount() {
         await Font.loadAsync({
             'roboto': require('../assets/fonts/Roboto/Roboto.ttf'),
-
         });
-
         this.setState({ fontLoaded: true });
     }
     render() {
