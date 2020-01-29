@@ -1,5 +1,5 @@
 import React, { useDebugValue } from 'react';
-import { StyleSheet, View, Alert,Image} from 'react-native';
+import { StyleSheet, View, Alert, Image } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import { Button } from 'react-native-elements';
 
@@ -32,13 +32,13 @@ export class LoginScreen extends React.Component {
                     </View>
                 </View>
                 <View style={styles.login}>
-                   <View style={styles.user}>
-                   <TextInput value={this.state.uname} onChangeText={(text) => this.setState({ uname: text })} style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1}} placeholder="Username" ></TextInput>
-                    <TextInput value={this.state.pass} onChangeText={(text) => this.setState({ pass: text })} style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1, marginTop: 8 }} placeholder="Password" secureTextEntry={true}></TextInput>
-                    <Button title="LOGIN" type="clear"
-                        style={{ height: 40, width: 150, borderColor: 'gray', borderWidth: 1, marginTop: 8, color: 'white', }}
-                        onPress={this.isMet}></Button>
-                   </View>
+                    <View style={styles.user}>
+                        <TextInput value={this.state.uname} onChangeText={(text) => this.setState({ uname: text })} style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1 }} placeholder="Username" ></TextInput>
+                        <TextInput value={this.state.pass} onChangeText={(text) => this.setState({ pass: text })} style={{ height: 40, width: 200, borderColor: 'gray', borderWidth: 1, marginTop: 8 }} placeholder="Password" secureTextEntry={true}></TextInput>
+                        <Button title="LOGIN" type="clear"
+                            style={{ height: 40, width: 150, borderColor: 'gray', borderWidth: 1, marginTop: 8, color: 'white', }}
+                            onPress={this.isMet}></Button>
+                    </View>
                 </View>
             </View>
 
@@ -52,13 +52,13 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
     },
     banner: {
-        flex: 1, 
+        flex: 1,
         backgroundColor: '#C43042',
     },
-    logo:{
-        marginTop:60,
-        alignItems:'center',
-        justifyContent:'center'
+    logo: {
+        marginTop: 60,
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     login: {
         flex: 2,
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     user: {
         flex: 2,
         backgroundColor: '#fff',
-        marginTop:50,
+        marginTop: 50,
         alignItems: 'center',
     },
 });

@@ -2,7 +2,7 @@ import React from 'react';
 import { Home, Settings, LoginScreen } from './screens';
 import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer';
 import { createAppContainer } from 'react-navigation'
-import { SafeAreaView, ScrollView, Dimensions, View, Text, StyleSheet } from 'react-native';
+import { SafeAreaView, ScrollView, Dimensions, View, Text, StyleSheet, Image } from 'react-native';
 
 const { width } = Dimensions.get('window');
 
@@ -21,15 +21,18 @@ const CustomDrawerComponent = (props) => (
     <View style={{
       height: 100, backgroundColor: 'white',
       borderBottomWidth: 2,
-      borderBottomColor: 'black'
+      borderBottomColor: '#C43042'
     }}>
-      <Text style={{ textAlign: 'center', fontSize: 40, padding: 20 }}>Menu</Text>
+      <View>
+        <View style={{ flex: 1, flexDirection: 'row' }}>
+          <Image source={require("./assets/menu.png")} style={styles.logo}></Image>
+          <Text style={styles.text}>Menu</Text>
+        </View>
+
+      </View>
     </View>
     <ScrollView>
-      <DrawerItems style={{
-        borderBottomWidth: 2,
-        borderBottomColor: 'black'
-      }} {...props} />
+      <DrawerItems {...props} />
     </ScrollView>
   </SafeAreaView>
 )
@@ -45,12 +48,27 @@ const AppDrawerNavigator = createDrawerNavigator({
     })
   },
 }, {
-  initialRouteName: 'LogOut',
+  initialRouteName: 'Home',
   contentComponent: CustomDrawerComponent,
   drawerWidth: width * 2 / 3,
   contentOptions: {
-    activeTintColor: 'grey',
+    activeTintColor: '#C43042',
     gestureEnabled: false,
     labelStyle: { textTransform: 'uppercase' }
   },
 });
+
+const styles = StyleSheet.create({
+  logo: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    borderWidth: 3,
+    borderColor: '#C43042',
+  }, text: {
+    fontSize: 30,
+    color: '#C43042',
+    padding: 40,
+    marginTop: -20
+  }
+})
